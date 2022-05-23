@@ -1,0 +1,60 @@
+### cards Index
+GET http://localhost:3000/cards.json
+
+### cards Create
+POST http://localhost:3000/cards.json
+Content-Type: application/json
+
+{
+"name": "Test name",
+"width": 640,
+"height": 480
+}
+
+### cards Show
+GET http://localhost:3000/cards/1.json
+
+### cards Update
+PATCH http://localhost:3000/cards/1.json
+Content-Type: application/json
+
+{
+"name": "New name",
+"width": 320,
+"height": 240
+}
+
+### cards Destroy
+DELETE http://localhost:3000/cards/101.json
+
+
+
+
+### decks Index
+GET http://localhost:3000/decks.json
+
+### decks Create
+POST http://localhost:3000/decks.json
+Content-Type: application/json
+
+{
+"name": "Test name",
+"width": 640,
+"height": 480
+}
+
+### decks Show
+GET http://localhost:3000/decks/1.json
+
+### decks Update
+PATCH http://localhost:3000/decks/1.json
+Content-Type: application/json
+
+{
+"name": "New name",
+"width": 320,
+"height": 240
+}
+
+### decks Destroy
+DELETE http://localhost:3000/decks/1.json
