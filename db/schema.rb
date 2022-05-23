@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_21_190215) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_23_205026) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -24,10 +24,19 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_21_190215) do
     t.boolean "is_graveyard"
     t.boolean "is_exile"
     t.boolean "tapped"
-    t.boolean "is_land"
-    t.boolean "is_creature"
     t.integer "deck_num"
     t.string "counters"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "is_land"
+    t.boolean "is_creature"
+  end
+
+  create_table "decks", force: :cascade do |t|
+    t.string "commander"
+    t.string "battlefield"
+    t.integer "life"
+    t.integer "turn_num"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
