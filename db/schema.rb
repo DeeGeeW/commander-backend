@@ -25,6 +25,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_21_190215) do
     t.boolean "is_exile"
     t.boolean "tapped"
     t.boolean "is_land"
+    t.boolean "is_creature"
     t.integer "deck_num"
     t.string "counters"
     t.datetime "created_at", null: false
