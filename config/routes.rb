@@ -13,5 +13,6 @@ Rails.application.routes.draw do
   get "/decks/:id" => "decks#show"
   patch "/decks/:id" => "decks#update"
   delete "/decks/:id" => "decks#destroy"
+  get "/decks/:id" => "decks#draw"
   
 end

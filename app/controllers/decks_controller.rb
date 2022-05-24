@@ -5,13 +5,16 @@ class DecksController < ApplicationController
   end
     
   # def draw
+  #   deck = Deck.find_by(id: params[:id])
   #   drawn_card = 0
   #   while drawn_card == 0
-  #     choice_of_card = deck[rand($deck.length)]; #choose a random card out of the deck
+  #     choice_of_card = deck.cards[rand(deck.cards.id.max)]; #choose a random card out of the deck
   #     drawn_card = $deck[choice_of_card]; #draw that random card from the deck
   #   end
   #   p drawn_card
   # end
+
+  
 
   # def create
   #   deck = Deck.new(
@@ -22,10 +25,21 @@ class DecksController < ApplicationController
   #   deck.save
   #   render json: deck.as_json
   # end
+  def draw
+    deck = Deck.find_by(id: params[:id])
+    drawn_card = deck.cards[rand(deck.cards.length)]
+    drawn_card.is_active = true
+    drawn_card.is_hand = true
+    deck.save
+    render json: drawn_card
+  end
 
   def show
     deck = Deck.find_by(id: params[:id])
-    render json: deck
+    # drawn_card = deck.cards[rand(deck.cards.length)]
+    # drawn_card.is_active = true
+    render json: deck.cards.sort()
+    # render json: deck.cards[1]
   end
 
   # def update
