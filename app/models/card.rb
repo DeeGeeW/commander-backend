@@ -1,5 +1,7 @@
 class Card < ApplicationRecord
-  def reset
-    p cards.length
-  end
+  validates :is_active, :inclusion => {:in => [true, false]}
+  validates :is_hand, :inclusion => {:in => [true, false]}
+  # def reset
+  #   p cards.length
+  # end
 end

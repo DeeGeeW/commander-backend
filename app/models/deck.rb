@@ -1,6 +1,6 @@
 class Deck < ApplicationRecord
 
-  
+
   def cards
     Card.where(deck_id: id, is_active: false)
   end

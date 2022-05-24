@@ -12,7 +12,7 @@ Content-Type: application/json
 }
 
 ### cards Show
-GET http://localhost:3000/cards/1.json
+GET http://localhost:3000/cards/73.json
 
 ### cards Update
 PATCH http://localhost:3000/cards/1.json
@@ -46,7 +46,7 @@ Content-Type: application/json
 ### decks Show
 GET http://localhost:3000/decks/1.json
 
-### decks draw
+### decks draw(update)
 PATCH http://localhost:3000/decks/1.json
 Content-Type: application/json
 

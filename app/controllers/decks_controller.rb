@@ -30,6 +30,7 @@ class DecksController < ApplicationController
     drawn_card = deck.cards[rand(deck.cards.length)]
     drawn_card.is_active = true
     drawn_card.is_hand = true
+    drawn_card.save
     deck.save
     render json: drawn_card
   end
