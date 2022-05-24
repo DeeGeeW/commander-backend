@@ -18,11 +18,11 @@ GET http://localhost:3000/cards/1.json
 PATCH http://localhost:3000/cards/1.json
 Content-Type: application/json
 
-{
-"name": "New name",
-"width": 320,
-"height": 240
-}
+# {
+# "name": "New name",
+# "width": 320,
+# "height": 240
+# }
 
 ### cards Destroy
 DELETE http://localhost:3000/cards/101.json
@@ -46,14 +46,14 @@ Content-Type: application/json
 ### decks Show
 GET http://localhost:3000/decks/1.json
 
-### decks Update
+### decks draw
 PATCH http://localhost:3000/decks/1.json
 Content-Type: application/json
 
 {
-"name": "New name",
-"width": 320,
-"height": 240
+"is_active": true,
+"is_hand": true
+
 }
 
 ### decks Destroy

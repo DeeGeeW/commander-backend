@@ -25,7 +25,7 @@ class DecksController < ApplicationController
   #   deck.save
   #   render json: deck.as_json
   # end
-  def draw
+  def update ##CARD DRAW!!!
     deck = Deck.find_by(id: params[:id])
     drawn_card = deck.cards[rand(deck.cards.length)]
     drawn_card.is_active = true
