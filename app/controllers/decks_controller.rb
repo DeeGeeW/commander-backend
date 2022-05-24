@@ -3,9 +3,15 @@ class DecksController < ApplicationController
     decks = Deck.all
     render json: decks.as_json
   end
-
-  # def draw
     
+  # def draw
+  #   drawn_card = 0
+  #   while drawn_card == 0
+  #     choice_of_card = deck[rand($deck.length)]; #choose a random card out of the deck
+  #     drawn_card = $deck[choice_of_card]; #draw that random card from the deck
+  #   end
+  #   p drawn_card
+  # end
 
   # def create
   #   deck = Deck.new(

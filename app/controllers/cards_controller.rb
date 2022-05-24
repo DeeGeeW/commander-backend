@@ -1,7 +1,7 @@
 class CardsController < ApplicationController
   def index
     cards = Card.all
-    render json: cards.as_json
+    render json: cards.sort()
   end
 
   def create
