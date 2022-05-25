@@ -58,3 +58,6 @@ Content-Type: application/json
 
 ### decks Destroy
 DELETE http://localhost:3000/decks/1.json
+
+### Hand Index
+GET http://localhost:3000/hands.json

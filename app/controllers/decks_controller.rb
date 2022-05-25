@@ -27,12 +27,14 @@ class DecksController < ApplicationController
   # end
   def update ##CARD DRAW!!!
     deck = Deck.find_by(id: params[:id])
-    drawn_card = deck.cards[rand(deck.cards.length)]
+    drawn_card = deck.cards[rand(100)]
+    if drawn_card != 0
     drawn_card.is_active = true
     drawn_card.is_hand = true
     drawn_card.save
     deck.save
     render json: drawn_card
+    end
   end
 
   def show

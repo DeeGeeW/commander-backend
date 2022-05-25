@@ -14,5 +14,8 @@ Rails.application.routes.draw do
   patch "/decks/:id" => "decks#update"
   delete "/decks/:id" => "decks#destroy"
   get "/decks/:id" => "decks#draw"
+
+  ##HAND DB
+  get "/hands" => "hands#index"
   
 end
