@@ -1,6 +1,6 @@
 class HandsController < ApplicationController
   def index
-    decks = Deck.all
-    render json: decks.as_json
+    deck = Deck.all
+    render json: deck.cards.sort()
   end
 end
