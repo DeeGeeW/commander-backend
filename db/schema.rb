@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_26_170530) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_26_200835) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -31,6 +31,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_26_170530) do
     t.boolean "is_land"
     t.boolean "is_creature"
     t.integer "hand_id"
+    t.integer "stack_id"
   end
 
   create_table "decks", force: :cascade do |t|
@@ -43,6 +44,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_26_170530) do
   end
 
   create_table "hands", force: :cascade do |t|
+    t.string "open_str"
+    t.integer "open_int"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "stacks", force: :cascade do |t|
     t.string "open_str"
     t.integer "open_int"
     t.datetime "created_at", null: false

@@ -19,7 +19,14 @@ Rails.application.routes.draw do
   get "/hands" => "hands#index"
   post "/hands" => "hands#create"
   get "/hands/:id" => "hands#show"
-  patch "/hands/:id" => "hands#update"
+  patch "/hands/:id" => "hands#play"
   delete "/hands/:id" => "hands#destroy"
+
+   ##STACK DB
+   get "/stacks" => "stacks#index"
+   post "/stacks" => "stacks#create"
+   get "/stacks/:id" => "stacks#show"
+   patch "/stacks/:id" => "stacks#update"
+   delete "/stacks/:id" => "hands#destroy"
   
 end

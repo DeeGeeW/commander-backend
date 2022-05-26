@@ -37,11 +37,11 @@ GET http://localhost:3000/decks.json
 POST http://localhost:3000/decks.json
 Content-Type: application/json
 
-{
-"name": "Test name",
-"width": 640,
-"height": 480
-}
+# {
+# "name": "Test name",
+# "width": 640,
+# "height": 480
+# }
 
 ### decks Show
 GET http://localhost:3000/decks/1.json
@@ -62,11 +62,24 @@ DELETE http://localhost:3000/decks/1.json
 ### Hand SHOW
 GET http://localhost:3000/hands/1.json
 
-### hands Create
-POST http://localhost:3000/hands.json
+# ### hands Create
+# POST http://localhost:3000/hands.json
+# Content-Type: application/json
+
+# {
+# "open_str": "Test Hand",
+# "open_int": 1
+# }
+
+### hands play(update)
+PATCH http://localhost:3000/hands/1.json
 Content-Type: application/json
 
-{
-"open_str": "Test Hand",
-"open_int": 1
-}
+# {
+# "is_active": true,
+# "is_hand": true
+
+# }
+
+### stack SHOW
+GET http://localhost:3000/stacks/1.json
