@@ -17,5 +17,9 @@ Rails.application.routes.draw do
 
   ##HAND DB
   get "/hands" => "hands#index"
+  post "/hands" => "hands#create"
+  get "/hands/:id" => "hands#show"
+  patch "/hands/:id" => "hands#update"
+  delete "/hands/:id" => "hands#destroy"
   
 end

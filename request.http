@@ -59,5 +59,14 @@ Content-Type: application/json
 ### decks Destroy
 DELETE http://localhost:3000/decks/1.json
 
-### Hand Index
-GET http://localhost:3000/hands.json
+### Hand SHOW
+GET http://localhost:3000/hands/1.json
+
+### hands Create
+POST http://localhost:3000/hands.json
+Content-Type: application/json
+
+{
+"open_str": "Test Hand",
+"open_int": 1
+}
