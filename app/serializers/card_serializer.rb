@@ -5,4 +5,5 @@ class CardSerializer < ActiveModel::Serializer
   belongs_to :deck_id
   belongs_to :hand_id
   belongs_to :stack_id
+  belongs_to :battlefeild_id
 end

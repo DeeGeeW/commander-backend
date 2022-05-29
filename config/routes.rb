@@ -29,4 +29,10 @@ Rails.application.routes.draw do
    patch "/stacks/:id" => "stacks#update"
    delete "/stacks/:id" => "hands#destroy"
   
+   ##BATTLEFEILD DB
+   get "/battlefeilds" => "battlefeilds#index"
+   post "/battlefeilds" => "battlefeilds#create"
+   get "/battlefeilds/:id" => "battlefeilds#show"
+   patch "/battlefeilds/:id" => "battlefeilds#update"
+   delete "/battlefeilds/:id" => "hands#destroy"
 end
