@@ -26,7 +26,7 @@ Rails.application.routes.draw do
    get "/stacks" => "stacks#index"
    post "/stacks" => "stacks#create"
    get "/stacks/:id" => "stacks#show"
-   patch "/stacks/:id" => "stacks#update"
+   patch "/stacks/:id" => "stacks#play_bf"
    delete "/stacks/:id" => "hands#destroy"
   
    ##BATTLEFEILD DB

@@ -84,6 +84,9 @@ Content-Type: application/json
 ### stack SHOW
 GET http://localhost:3000/stacks/1.json
 
+### stacks play(update)
+PATCH http://localhost:3000/stacks/1.json
+Content-Type: application/json
 
 ### battlefeild SHOW
 GET http://localhost:3000/battlefeilds/1.json
