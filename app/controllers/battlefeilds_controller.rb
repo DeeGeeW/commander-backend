@@ -13,13 +13,24 @@ class BattlefeildsController < ApplicationController
     # render json: deck.cards[1]
   end
 
-  def create
-    battlefeild = Battlefeild.new(
-      open_str: params[:open_str],
-      open_int: params[:open_int]
-    )
-    battlefeild.save
-    render json: battlefeild.as_json
+  def play_gy
+    stack = Stack.find_by(id: params[:id])
+    card_id = params["id"].to_i
+    gy_card = stack.cards[card_id]
+    gy_card.is_battlefield = false
+    gy_card.is_graveyard = true
+    gy_card.save
+    stack.save
+    render json: gy_card
   end
+
+  # def create
+  #   battlefeild = Battlefeild.new(
+  #     open_str: params[:open_str],
+  #     open_int: params[:open_int]
+  #   )
+  #   battlefeild.save
+  #   render json: battlefeild.as_json
+  # end
 
 end

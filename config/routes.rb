@@ -33,6 +33,14 @@ Rails.application.routes.draw do
    get "/battlefeilds" => "battlefeilds#index"
    post "/battlefeilds" => "battlefeilds#create"
    get "/battlefeilds/:id" => "battlefeilds#show"
-   patch "/battlefeilds/:id" => "battlefeilds#update"
+   patch "/battlefeilds/:id" => "battlefeilds#play_gy"
    delete "/battlefeilds/:id" => "hands#destroy"
+
+   ##graveyard DB
+   get "/graveyards" => "graveyards#index"
+   post "/graveyards" => "graveyards#create"
+   get "/graveyards/:id" => "graveyards#show"
+   patch "/graveyards/:id" => "graveyards#update"
+   delete "/graveyards/:id" => "hands#destroy"
+
 end

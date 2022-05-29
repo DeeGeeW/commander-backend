@@ -90,3 +90,10 @@ Content-Type: application/json
 
 ### battlefeild SHOW
 GET http://localhost:3000/battlefeilds/1.json
+
+### battlefeilds play(update)
+PATCH http://localhost:3000/battlefeilds/1.json
+Content-Type: application/json
+
+### graveyard SHOW
+GET http://localhost:3000/graveyards/1.json

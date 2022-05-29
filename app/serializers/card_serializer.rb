@@ -6,4 +6,5 @@ class CardSerializer < ActiveModel::Serializer
   belongs_to :hand_id
   belongs_to :stack_id
   belongs_to :battlefeild_id
+  belongs_to :graveyard_id
 end
