@@ -14,13 +14,13 @@ class BattlefeildsController < ApplicationController
   end
 
   def play_gy
-    stack = Stack.find_by(id: params[:id])
+    battlefeild = Battlefeild.find_by(id: params[:id])
     card_id = params["id"].to_i
-    gy_card = stack.cards[card_id]
+    gy_card = battlefeild.cards[card_id]
     gy_card.is_battlefield = false
     gy_card.is_graveyard = true
     gy_card.save
-    stack.save
+    battlefeild.save
     render json: gy_card
   end
 

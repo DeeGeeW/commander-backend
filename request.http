@@ -97,3 +97,10 @@ Content-Type: application/json
 
 ### graveyard SHOW
 GET http://localhost:3000/graveyards/1.json
+
+### graveyards play(update)
+PATCH http://localhost:3000/graveyards/1.json
+Content-Type: application/json
+
+### exile SHOW
+GET http://localhost:3000/exiles/1.json
