@@ -42,8 +42,8 @@ class DecksController < ApplicationController
     # drawn_card = deck.cards[rand(deck.cards.length)]
     # drawn_card.is_active = true
     render json: deck
-    render json: deck.cards.sort()
-    # render json: deck.cards[1]
+    # render json: deck.cards.sort
+   
   end
 
   # def update
