@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_02_194058) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_14_221917) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -43,6 +43,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_02_194058) do
     t.integer "graveyard_id"
     t.integer "exile_id"
     t.string "card_back"
+    t.string "card_name"
   end
 
   create_table "decks", force: :cascade do |t|
