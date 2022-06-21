@@ -8,7 +8,7 @@ class CardsController < ApplicationController
     card = Card.new(
       name: params[:name],
       width: params[:width],
-      height: params[:height]
+      height: params[:height],
     )
     card.save
     render json: card.as_json
@@ -31,6 +31,6 @@ class CardsController < ApplicationController
   def destroy
     card = Card.find_by(id: params[:id])
     card.destroy
-    render json: {message: "card successfully destroyed."}
+    render json: { message: "card successfully destroyed." }
   end
 end
