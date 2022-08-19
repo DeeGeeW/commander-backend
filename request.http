@@ -1,6 +1,9 @@
 ### cards Index
 GET http://localhost:3000/cards.json
 
+### cards reset
+PATCH http://localhost:3000/cards.json
+
 ### cards Create
 POST http://localhost:3000/cards.json
 Content-Type: application/json

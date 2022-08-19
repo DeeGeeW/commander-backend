@@ -4,6 +4,21 @@ class CardsController < ApplicationController
     render json: cards.sort()
   end
 
+  def reset
+    cards = Card.all
+    i = 0
+    while i < cards.length
+      cards[i].is_active = false
+      cards[i].is_hand = false
+      cards[i].is_battlefield = false
+      cards[i].is_graveyard = false
+      cards[i].is_exile = false
+      cards[i].is_stack = false
+      cards[i].save
+      i += 1
+    end
+  end
+
   def create
     card = Card.new(
       name: params[:name],
@@ -16,15 +31,6 @@ class CardsController < ApplicationController
 
   def show
     card = Card.find_by(id: params[:id])
-    render json: card.as_json
-  end
-
-  def update
-    card = Card.find_by(id: params[:id])
-    card.name = params[:name] || card.name
-    card.width = params[:width] || card.width
-    card.height = params[:height] || card.height
-    card.save
     render json: card.as_json
   end
 
