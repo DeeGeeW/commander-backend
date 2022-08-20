@@ -49,4 +49,10 @@ Rails.application.routes.draw do
   get "/exiles/:id" => "exiles#show"
   patch "/exiles/:id" => "exiles#update"
   delete "/exiles/:id" => "hands#destroy"
+
+  ##tap
+  patch "/taps/:id" => "taps#tap"
+
+  ##untap
+  patch "/untaps/:id" => "untaps#untap"
 end
