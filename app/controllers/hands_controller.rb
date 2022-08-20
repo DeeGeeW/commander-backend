@@ -1,6 +1,6 @@
 class HandsController < ApplicationController
   def index
-    hand = hand.all
+    hand = Hand.all
     render json: hand.cards.sort()
   end
 
@@ -21,13 +21,13 @@ class HandsController < ApplicationController
   #   render json: hand.as_json
   # end
   def play
-    hand = Hand.find_by(id: params[:id])
-    card_id = params["id"].to_i
-    played_card = hand["id"]
-    played_card.is_hand = false
+    card = Card.find_by(deck_num: params[:deck_num])
+    card_deck_num = params["deck_num"].to_i
+    played_card = card["deck_num"]
+    played_card.is_card = false
     played_card.is_stack = true
     played_card.save
-    hand.save
+    card.save
     played_card.save
     render json: played_card
   end
