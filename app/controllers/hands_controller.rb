@@ -27,7 +27,6 @@ class HandsController < ApplicationController
     card["is_hand"] = false
     card["is_stack"] = true
     card.save
-    card.save
     render json: card
   end
 end

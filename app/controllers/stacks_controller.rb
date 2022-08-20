@@ -3,7 +3,7 @@ class StacksController < ApplicationController
     stack = Stack.all
     render json: stack.cards.sort()
   end
-  
+
   def show
     stack = Stack.find_by(id: params[:id])
     # drawn_card = stack.cards[rand(stack.cards.length)]
@@ -22,14 +22,13 @@ class StacksController < ApplicationController
   # end
 
   def play_bf
-    stack = Stack.find_by(id: params[:id])
-    card_id = params["id"].to_i
-    bf_card = stack.cards[card_id]
-    bf_card.is_stack = false
-    bf_card.is_battlefield = true
-    bf_card.save
-    stack.save
-    render json: bf_card
+    card = Card.find_by(id: params[:id])
+    # card_id = params["id"].to_i
+    # bf_card = stack.cards[card_id]
+    card["is_stack"] = false
+    card["is_hand"] = false
+    card["is_battlefield"] = true
+    card.save
+    render json: card
   end
-
 end
