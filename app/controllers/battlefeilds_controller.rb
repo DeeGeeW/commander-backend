@@ -1,10 +1,9 @@
 class BattlefeildsController < ApplicationController
-
   def index
     battlefeild = Battlefeild.all
     render json: battlefeild.cards.sort()
   end
-  
+
   def show
     battlefeild = Battlefeild.find_by(id: params[:id])
     # drawn_card = battlefeild.cards[rand(battlefeild.cards.length)]
@@ -14,14 +13,13 @@ class BattlefeildsController < ApplicationController
   end
 
   def play_gy
-    battlefeild = Battlefeild.find_by(id: params[:id])
-    card_id = params["id"].to_i
-    gy_card = battlefeild.cards[card_id]
-    gy_card.is_battlefield = false
-    gy_card.is_graveyard = true
-    gy_card.save
-    battlefeild.save
-    render json: gy_card
+    card = Card.find_by(id: params[:id])
+    card["is_hand"] = false
+    card["is_stack"] = false
+    card["is_battlefield"] = false
+    card["is_graveyard"] = true
+    card.save
+    render json: card
   end
 
   # def create
