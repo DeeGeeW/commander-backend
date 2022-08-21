@@ -17,6 +17,7 @@ Graveyard.create!([
 Exile.create!([
   { open_str: "open Exile", open_int: 1 },
 ])
+Land.create!([{ open_str: "open Land", open_int: 1 }])
 Card.create!([
   ## creatures
   { card_name: "Fog Bank", deck_id: 1, card_img: "https://cdn1.mtggoldfish.com/images/h/Fog-Bank-BBD-672.jpg", is_active: false, is_hand: false, is_stack: false, is_battlefield: false, is_graveyard: false, is_exile: false, is_land: false, is_creature: true, tapped: false, hand_id: 1, deck_num: 1, stack_id: 1, battlefeild_id: 1, graveyard_id: 1, land_id: 1, exile_id: 1, card_back: "https://i0.wp.com/somethingcentral.com/wp-content/uploads/2021/04/MtgBackCard.jpg?resize=740%2C1024&ssl=1", counters: "" },
