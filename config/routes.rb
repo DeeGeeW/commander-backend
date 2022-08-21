@@ -36,6 +36,9 @@ Rails.application.routes.draw do
   patch "/battlefeilds/:id" => "battlefeilds#play_gy"
   delete "/battlefeilds/:id" => "hands#destroy"
 
+  ##LAND
+  get "/lands" => "lands#index"
+
   ##graveyard
   get "/graveyards" => "graveyards#index"
   post "/graveyards" => "graveyards#create"
