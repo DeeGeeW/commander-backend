@@ -1,10 +1,9 @@
 class GraveyardsController < ApplicationController
-
   def index
     graveyard = Graveyard.all
     render json: graveyard.cards.sort()
   end
-  
+
   def show
     graveyard = Graveyard.find_by(id: params[:id])
     # drawn_card = graveyard.cards[rand(graveyard.cards.length)]
@@ -14,14 +13,14 @@ class GraveyardsController < ApplicationController
   end
 
   def play_ex
-    graveyard = Graveyard.find_by(id: params[:id])
-    card_id = params["id"].to_i
-    ex_card = graveyard.cards[card_id]
-    ex_card.is_graveyard = false
-    ex_card.is_exile = true
-    ex_card.save
-    graveyard.save
-    render json: ex_card
+    card = Card.find_by(id: params[:id])
+    card["is_hand"] = false
+    card["is_stack"] = false
+    card["is_battlefield"] = false
+    card["is_graveyard"] = false
+    card["is_exile"] = true
+    card.save
+    render json: card
   end
 
   # def create
