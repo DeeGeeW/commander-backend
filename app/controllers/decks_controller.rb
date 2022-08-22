@@ -3,7 +3,7 @@ class DecksController < ApplicationController
     decks = Deck.all
     render json: decks.as_json
   end
-    
+
   # def draw
   #   deck = Deck.find_by(id: params[:id])
   #   drawn_card = 0
@@ -13,8 +13,6 @@ class DecksController < ApplicationController
   #   end
   #   p drawn_card
   # end
-
-  
 
   # def create
   #   deck = Deck.new(
@@ -26,14 +24,17 @@ class DecksController < ApplicationController
   #   render json: deck.as_json
   # end
   def update ##CARD DRAW!!!
-    deck = Deck.find_by(id: params[:id])
-    drawn_card = deck.cards[rand(100)]
-    if drawn_card != 0
-    drawn_card.is_active = true
-    drawn_card.is_hand = true
-    drawn_card.save
-    deck.save
-    render json: drawn_card
+    100.times do
+      deck = Deck.find_by(id: params[:id])
+      drawn_card = deck.cards[rand(100)]
+      if drawn_card != 0
+        drawn_card.is_active = true
+        drawn_card.is_hand = true
+        drawn_card.save
+        deck.save
+        render json: drawn_card
+        break
+      end
     end
   end
 
@@ -43,7 +44,7 @@ class DecksController < ApplicationController
     # drawn_card.is_active = true
     render json: deck
     # render json: deck.cards.sort
-   
+
   end
 
   # def update
@@ -58,6 +59,6 @@ class DecksController < ApplicationController
   def destroy
     deck = Deck.find_by(id: params[:id])
     deck.destroy
-    render json: {message: "deck successfully destroyed."}
+    render json: { message: "deck successfully destroyed." }
   end
 end
