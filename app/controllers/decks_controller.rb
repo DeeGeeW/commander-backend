@@ -14,15 +14,15 @@ class DecksController < ApplicationController
   #   p drawn_card
   # end
 
-  # def create
-  #   deck = Deck.new(
-  #     name: params[:name],
-  #     width: params[:width],
-  #     height: params[:height]
-  #   )
-  #   deck.save
-  #   render json: deck.as_json
-  # end
+  def create
+    deck = Deck.new(
+      commander: params[:commander],
+      battlefield: params[:battlefield],
+    )
+    deck.save
+    render json: deck.as_json
+  end
+
   def update ##CARD DRAW!!!
     100.times do
       deck = Deck.find_by(id: params[:id])
@@ -40,11 +40,7 @@ class DecksController < ApplicationController
 
   def show
     deck = Deck.find_by(id: params[:id])
-    # drawn_card = deck.cards[rand(deck.cards.length)]
-    # drawn_card.is_active = true
     render json: deck
-    # render json: deck.cards.sort
-
   end
 
   # def update
