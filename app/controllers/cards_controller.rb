@@ -14,6 +14,8 @@ class CardsController < ApplicationController
       cards[i].is_graveyard = false
       cards[i].is_exile = false
       cards[i].is_stack = false
+      cards[i].counters = ""
+      cards[i].tapped = false
       cards[i].save
       i += 1
     end
