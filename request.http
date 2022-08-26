@@ -29,7 +29,7 @@ Content-Type: application/json
 # }
 
 ### cards Destroy
-DELETE http://localhost:3000/cards/101.json
+DELETE http://localhost:3000/cards/165.json
 
 
 
