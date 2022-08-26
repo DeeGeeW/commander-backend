@@ -1,6 +1,6 @@
 class BattlefeildsController < ApplicationController
   def index
-    battlefeild = Battlefeild.all
+    battlefeild = Battlefeild.find_by(id: params[:id]).all
     render json: battlefeild.cards.sort()
   end
 
@@ -20,6 +20,14 @@ class BattlefeildsController < ApplicationController
     card["is_graveyard"] = true
     card.save
     render json: card
+  end
+
+  def create
+    battlefeild = Battlefeild.create(
+      open_str: "",
+      open_int: 2,
+    )
+    render json: battlefeild.as_json
   end
 
   # def create

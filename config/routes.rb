@@ -39,6 +39,7 @@ Rails.application.routes.draw do
   ##LAND
   get "/lands" => "lands#index"
   get "/lands/:id" => "lands#show"
+  post "/lands" => "lands#create"
 
   ##graveyard
   get "/graveyards" => "graveyards#index"

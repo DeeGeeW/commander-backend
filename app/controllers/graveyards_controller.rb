@@ -1,6 +1,6 @@
 class GraveyardsController < ApplicationController
   def index
-    graveyard = Graveyard.all
+    graveyard = Graveyard.find_by(id: params[:id]).all
     render json: graveyard.cards.sort()
   end
 
@@ -10,6 +10,14 @@ class GraveyardsController < ApplicationController
     # drawn_card.is_active = true
     render json: graveyard.cards.sort()
     # render json: deck.cards[1]
+  end
+
+  def create
+    graveyard = Graveyard.create(
+      open_str: "",
+      open_int: 2,
+    )
+    render json: graveyard.as_json
   end
 
   def play_ex

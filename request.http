@@ -108,3 +108,21 @@ Content-Type: application/json
 
 ### exile SHOW
 GET http://localhost:3000/exiles/1.json
+
+### exile Create
+POST http://localhost:3000/exiles.json
+
+### graveyard Create
+POST http://localhost:3000/graveyards.json
+
+### battlefeild Create
+POST http://localhost:3000/battlefeilds.json
+
+### land Create
+POST http://localhost:3000/lands.json
+
+### hand Create
+POST http://localhost:3000/hands.json
+
+### stack Create
+POST http://localhost:3000/stacks.json

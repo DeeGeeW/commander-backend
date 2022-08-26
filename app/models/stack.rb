@@ -1,7 +1,7 @@
 class Stack < ApplicationRecord
 
   def cards
-    Card.where(is_stack: true, is_active: true)
+    Card.where(deck_id: id, is_stack: true, is_active: true)
   end
   
 end
