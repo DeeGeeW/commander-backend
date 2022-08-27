@@ -60,4 +60,10 @@ Rails.application.routes.draw do
 
   ##untap
   patch "/untaps/:id" => "untaps#untap"
+
+  ##flip-creature
+  patch "/flip_creature/:id" => "flip_creature#flip_creature"
+
+  ##flip-land
+  patch "/flip_land/:id" => "flip_land#flip_land"
 end

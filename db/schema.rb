@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_21_152923) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_27_155601) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -45,6 +45,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_21_152923) do
     t.string "card_back"
     t.string "card_name"
     t.integer "land_id"
+    t.boolean "is_back"
   end
 
   create_table "decks", force: :cascade do |t|
