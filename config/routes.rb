@@ -66,4 +66,7 @@ Rails.application.routes.draw do
 
   ##flip-land
   patch "/flip_land/:id" => "flip_land#flip_land"
+
+  ##flip-back
+  patch "/flip_backs/:id" => "flip_backs#flip_backs"
 end
